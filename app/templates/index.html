@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Text to Speech</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+
+        <main class="glass-card">
+            <div class="textarea-wrapper">
+                <textarea id="text-input" placeholder="Type something amazing here..."></textarea>
+                <div class="text-stats">
+                    <span id="char-count">0 characters</span>
+                    <span id="word-count">0 words</span>
+                </div>
+            </div>
+
+            <div class="pause-toolbar">
+                <span class="pause-label">Pauses:</span>
+                <button class="btn-pause" data-duration="0.5s">0.5s</button>
+                <button class="btn-pause" data-duration="1.0s">1.0s</button>
+                <button class="btn-pause" data-duration="2.0s">2.0s</button>
+            </div>
+
+            <div class="controls-stack">
+                <div class="control-item">
+                    <label for="voice-select">Voice</label>
+                    <select id="voice-select">
+                        <option value="" disabled selected>Loading voices...</option>
+                    </select>
+                </div>
+
+                <div class="control-item">
+                    <div class="control-header">
+                        <label for="rate-input">Speed</label>
+                        <span id="rate-value" class="control-value">1.0x</span>
+                    </div>
+                    <input type="range" id="rate-input" min="-50" max="50" value="0">
+                </div>
+
+                <div class="control-item">
+                    <div class="control-header">
+                        <label for="pitch-input">Pitch</label>
+                        <span id="pitch-value" class="control-value">0Hz</span>
+                    </div>
+                    <input type="range" id="pitch-input" min="-50" max="50" value="0">
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="speak-btn" class="btn btn-primary">
+                    <span class="icon">▶</span> Speak
+                </button>
+                <button id="stop-btn" class="btn btn-secondary" disabled>
+                    <span class="icon">■</span> Stop
+                </button>
+                <a id="download-btn" class="btn btn-secondary" style="display: none;" download="speech.mp3">
+                    <span class="icon">⬇</span> Download
+                </a>
+            </div>
+
+            <div class="visualizer-container">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
